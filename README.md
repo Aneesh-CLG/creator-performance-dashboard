@@ -163,7 +163,7 @@ These notebooks document the analytical thinking behind the final dashboard and 
 
 8️⃣ AI Collaboration LogAI Tool(s) Used
 
-ChatGPT, Chef by Convex(reference), Verdent AI(reference), DeepState AI(reference)
+ChatGPT, Chef by Convex(reference), Verdent AI(reference), DeepState AI(reference), QuillBot(for better prompt generation)
 
 How AI Was Used (Under My Direction)
 
