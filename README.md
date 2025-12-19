@@ -115,33 +115,91 @@ engagement_rate	REAL	Engagement percentage
 
 Analytics are computed dynamically using SQL aggregations grouped by date.
 
-7️⃣ AI Collaboration Log
-AI Tool(s) Used
+7️⃣ Exploratory Data Analysis (EDA) & Analytics
 
-ChatGPT
+Before building the dashboard, exploratory data analysis (EDA) was performed to understand the structure, quality, and distribution of the dataset. This step helped identify meaningful metrics and informed the analytics design.
 
-How AI Helped
+EDA Activities
 
-Designed REST API structure using Express and SQLite
+Inspected dataset structure and data types
 
-Helped define analytics aggregation logic
+Checked for missing or inconsistent values
 
-Assisted with React component structure and data flow
+Analyzed distributions of views, likes, and engagement rates
 
-Supported debugging of React state, lifecycle, and async behavior
+Identified outliers and high-performing videos
 
-Helped improve UX with loading, error, and empty states
+Validated date fields for time-based aggregation
 
-Example Prompt
+EDA was carried out using Jupyter notebooks with Python and SQL to ensure correctness before persisting the data in SQLite.
 
-“Design a creator performance dashboard inspired by Hootsuite Analytics using React, Express, and SQLite with minimal scope.”
+Analytics Performed
 
-Example Correction / Refactor
+Based on the EDA findings, the following analytics were implemented:
 
-AI initially assumed the database would have a sequential id column.
-During implementation, I identified SQLite’s use of rowid and corrected both backend update logic and frontend requests accordingly. This ensured correct updates and demonstrated understanding of database behavior rather than blindly accepting AI output.
+Total Views: Aggregated sum of views across all videos
 
-8️⃣ Trade-offs + Next Improvements
+Total Likes: Aggregated sum of likes
+
+Average Engagement Rate: Mean engagement percentage
+
+Time-based trends: Aggregations grouped by publish date
+
+Comparative analysis: Views vs likes for performance comparison
+
+These analytics are computed using SQL aggregation queries and exposed through a REST API as JSON, which is then visualized on the frontend dashboard.
+
+Supporting Notebooks
+
+The repository also includes exploratory and experimental notebooks:
+
+EDA.ipynb – initial dataset exploration and cleaning
+
+SQL-connection.ipynb – validating SQL queries and aggregations
+
+Visualisation.ipynb – early visualization experiments
+
+These notebooks document the analytical thinking behind the final dashboard and support the production implementation.
+
+8️⃣ AI Collaboration LogAI Tool(s) Used
+
+ChatGPT, Chef by Convex(reference), Verdent AI(reference), DeepState AI(reference)
+
+How AI Was Used (Under My Direction)
+
+Used AI to brainstorm and validate architectural options after I defined the Track B requirements and overall dashboard scope.
+
+Requested AI assistance to translate my analytics requirements into REST API designs and SQL aggregation logic.
+
+Used AI as a debugging assistant when resolving backend issues (SQLite paths, rowid behavior, API errors) after I identified the root cause.
+
+Leveraged AI to refine frontend components and UX based on my feedback, including loading states, error handling, and chart interactions.
+
+Iteratively improved the README and documentation using AI, while ensuring all content accurately reflects what was implemented.
+
+In all cases, AI was used as a collaborative tool, not as a source of unchecked code. All outputs were reviewed, tested, and modified as needed.
+
+Example Prompt (User-Driven)
+
+“I have chosen Track B and want to build a creator performance dashboard. Based on my dataset and analytics goals, help me structure REST APIs and a React dashboard that meet the minimum scope requirements.”
+
+This prompt reflects intentional direction rather than open-ended generation.
+
+Example of AI Output Correction / Refactor
+
+During development, AI initially assumed the presence of a sequential id column for database records. After inspecting the SQLite schema myself, I identified that rowid was being used instead. I corrected the backend update logic and aligned frontend requests accordingly, ensuring correct data updates and consistent behavior.
+
+This demonstrates active validation, correction, and ownership of the final implementation.
+
+Responsible AI Usage
+
+All AI-generated suggestions were reviewed and adapted to fit the project’s scope.
+
+No AI output was used without understanding or testing it.
+
+Final architectural and implementation decisions were made by me, with AI acting only as a support tool.
+
+9️⃣ Trade-offs + Next Improvements
 Trade-offs
 
 Authentication was excluded to keep scope minimal
@@ -162,7 +220,7 @@ Introduce authentication and user-specific dashboards
 
 Add caching for analytics queries
 
-9️⃣ Sample Data
+1️⃣0️⃣ Sample Data
 Seed Strategy
 
 Initial data sourced from a YouTube analytics CSV
