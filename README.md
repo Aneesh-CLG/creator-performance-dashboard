@@ -68,7 +68,43 @@ SQLite
 
 SQL queries and aggregations for analytics
 
-4️⃣ How to Run Locally
+4️⃣ Project File Structure
+creator-performance-dashboard/
+├── README.md                # Project documentation
+├── backend/                 # Backend (Express + SQLite)
+│   ├── package.json
+│   ├── .env.example         # Environment variable template
+│   └── src/
+│       ├── server.js        # App entry point
+│       ├── routes/          # API route definitions
+│       ├── controllers/     # Request handlers / business logic
+│       └── db/
+│           └── database.sqlite   # SQLite database
+│
+├── frontend/                # Frontend (React + Vite)
+│   ├── package.json
+│   └── src/
+│       ├── pages/           # Page-level components
+│       │   └── Dashboard.jsx
+│       ├── components/      # Reusable UI components
+│       │   ├── MetricCard.jsx
+│       │   ├── MetricsTable.jsx
+│       │   ├── FilterBar.jsx
+│       │   ├── ChartSelector.jsx
+│       │   ├── AnalyticsChart.jsx
+│       │   └── AddVideoForm.jsx
+│       ├── services/        # API interaction layer
+│       │   └── api.js
+│       ├── App.jsx
+│       ├── main.jsx
+│       └── index.css        # Global styles
+│
+├── notebooks/               # Exploratory & analytics notebooks
+│   ├── EDA.ipynb
+│   ├── SQL-connection.ipynb
+│   └── Visualisation.ipynb
+
+5️⃣ How to Run Locally
 Backend
 cd backend
 npm install
@@ -89,7 +125,7 @@ Frontend runs at:
 
 http://localhost:5173
 
-5️⃣ API Endpoints
+6️⃣ API Endpoints
 Create new video metrics
 POST /api/videos
 
@@ -102,7 +138,7 @@ GET /api/analytics
 
 All endpoints return JSON responses with clear success or error messages.
 
-6️⃣ Data Model
+7️⃣ Data Model
 Table: videos
 Field	Type	Description
 rowid	INTEGER	SQLite primary identifier
@@ -115,7 +151,7 @@ engagement_rate	REAL	Engagement percentage
 
 Analytics are computed dynamically using SQL aggregations grouped by date.
 
-7️⃣ Exploratory Data Analysis (EDA) & Analytics
+8️⃣ Exploratory Data Analysis (EDA) & Analytics
 
 Before building the dashboard, exploratory data analysis (EDA) was performed to understand the structure, quality, and distribution of the dataset. This step helped identify meaningful metrics and informed the analytics design.
 
@@ -161,7 +197,7 @@ Visualisation.ipynb – early visualization experiments
 
 These notebooks document the analytical thinking behind the final dashboard and support the production implementation.
 
-8️⃣ AI Collaboration LogAI Tool(s) Used
+9️⃣ AI Collaboration LogAI Tool(s) Used
 
 ChatGPT, Chef by Convex(reference), Verdent AI(reference), DeepState AI(reference), QuillBot(for better prompt generation)
 
@@ -199,7 +235,7 @@ No AI output was used without understanding or testing it.
 
 Final architectural and implementation decisions were made by me, with AI acting only as a support tool.
 
-9️⃣ Trade-offs + Next Improvements
+1️⃣0️⃣ Trade-offs + Next Improvements
 Trade-offs
 
 Authentication was excluded to keep scope minimal
@@ -220,7 +256,7 @@ Introduce authentication and user-specific dashboards
 
 Add caching for analytics queries
 
-1️⃣0️⃣ Sample Data
+1️⃣1️⃣ Sample Data
 Seed Strategy
 
 Initial data sourced from a YouTube analytics CSV
