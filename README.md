@@ -104,6 +104,8 @@ creator-performance-dashboard/
 │   ├── SQL-connection.ipynb
 │   └── Visualisation.ipynb
 
+<img width="341" height="644" alt="image" src="https://github.com/user-attachments/assets/abf4519d-b85b-49f4-a3d1-b52f0a7bcd0e" />
+
 5️⃣ How to Run Locally
 Backend
 cd backend
