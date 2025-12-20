@@ -69,58 +69,23 @@ SQLite
 SQL queries and aggregations for analytics
 
 4️⃣ Project File Structure
-creator-performance-dashboard/
-├── README.md                # Project documentation
-├── backend/                 # Backend (Express + SQLite)
-│   ├── package.json
-│   ├── .env.example         # Environment variable template
-│   └── src/
-│       ├── server.js        # App entry point
-│       ├── routes/          # API route definitions
-│       ├── controllers/     # Request handlers / business logic
-│       └── db/
-│           └── database.sqlite   # SQLite database
-│
-├── frontend/                # Frontend (React + Vite)
-│   ├── package.json
-│   └── src/
-│       ├── pages/           # Page-level components
-│       │   └── Dashboard.jsx
-│       ├── components/      # Reusable UI components
-│       │   ├── MetricCard.jsx
-│       │   ├── MetricsTable.jsx
-│       │   ├── FilterBar.jsx
-│       │   ├── ChartSelector.jsx
-│       │   ├── AnalyticsChart.jsx
-│       │   └── AddVideoForm.jsx
-│       ├── services/        # API interaction layer
-│       │   └── api.js
-│       ├── App.jsx
-│       ├── main.jsx
-│       └── index.css        # Global styles
-│
-├── notebooks/               # Exploratory & analytics notebooks
-│   ├── EDA.ipynb
-│   ├── SQL-connection.ipynb
-│   └── Visualisation.ipynb
-
 <img width="341" height="644" alt="image" src="https://github.com/user-attachments/assets/abf4519d-b85b-49f4-a3d1-b52f0a7bcd0e" />
 
 5️⃣ How to Run Locally
-Backend
-cd backend
-npm install
-npm start
+Backend:
+1) cd backend
+2) npm install
+3) npm start
 
 
 Backend runs at:
 
 http://localhost:5000
 
-Frontend
-cd frontend
-npm install
-npm run dev
+Frontend:
+1) cd frontend
+2) npm install
+3) npm run dev
 
 
 Frontend runs at:
